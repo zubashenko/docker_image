@@ -46,5 +46,9 @@ RUN wget https://github.com/gt1/biobambam2/releases/download/2.0.87-release-2018
         rm -r /soft/biobambam2 && \
         cd ..
 
+# Assigning variables and adding programs paths to $PATH
+ENV SAMTOOLS="/soft/samtools-1.12/samtools"
+ENV PATH="/soft/biobambam2_v2.0.87/bin:/soft/biobambam2_v2.0.87/lib:/soft/samtools-1.12:${PATH}"
+
 
 
