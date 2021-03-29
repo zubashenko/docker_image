@@ -37,6 +37,14 @@ RUN wget https://github.com/samtools/samtools/releases/download/1.12/samtools-1.
         make install && \
         cd ..
 
+# Install biobambam2 v2.0.087 01.03.2018
+RUN wget https://github.com/gt1/biobambam2/releases/download/2.0.87-release-20180301132713/biobambam2-2.0.87-release-20180301132713-x86_64-etch-linux-gnu.tar.gz && \
+        tar xvzf biobambam2-2.0.87-release-20180301132713-x86_64-etch-linux-gnu.tar.gz && \
+        rm biobambam2-2.0.87-release-20180301132713-x86_64-etch-linux-gnu.tar.gz && \
+        mkdir /soft/biobambam2_v2.0.87 && \
+        mv /soft/biobambam2/2.0.87-release-20180301132713/x86_64-etch-linux-gnu/* /soft/biobambam2_v2.0.87/ && \
+        rm -r /soft/biobambam2 && \
+        cd ..
 
 
 
