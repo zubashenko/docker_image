@@ -26,6 +26,17 @@ RUN apt-get update && apt-get -y upgrade && \
         make install && \
         cp /usr/local/lib/libdeflate* /lib/ && \
         cd ..
+        
+# install samtools v1.12 17.03.2021
+RUN wget https://github.com/samtools/samtools/releases/download/1.12/samtools-1.12.tar.bz2 && \
+        tar jxf samtools-1.12.tar.bz2 && \
+        rm samtools-1.12.tar.bz2 && \
+        cd samtools-1.12/ && \
+        ./configure --with-libdeflate && \
+        make && \
+        make install && \
+        cd ..
+
 
 
 
